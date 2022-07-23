@@ -170,14 +170,14 @@ async def test_mux(dut):
     await Timer(2,units='ns')
     out = dut.out.value
     dut._log.info(f'Input = {dut.inp13.value} Select={dut.sel.value}  model = {dut.inp13.value}, DUT={int(dut.out.value)}')
-    assert dut.out.value == dut.inp13.value, "Test Failed for input"
+    assert dut.out.value == dut.inp13.value, "Test Failed for input{dut.inp13.value}"
 
     sel = 14
     dut.sel.value = sel
     await Timer(2,units='ns')
     out = dut.out.value
     dut._log.info(f'Input = {dut.inp14.value} Select={dut.sel.value}  model = {dut.inp14.value}, DUT={int(dut.out.value)}')
-    assert dut.out.value == dut.inp14.value, "Test Failed for input"
+    assert dut.out.value == dut.inp14.value, "Test Failed for input {dut.inp14.value}"
 
     sel = 15
     dut.sel.value = sel
@@ -289,7 +289,7 @@ async def test_mux(dut):
     await Timer(2,units='ns')
     out = dut.out.value
     dut._log.info(f'Input = {dut.inp30.value} Select={dut.sel.value}  model = {dut.inp30.value}, DUT={int(dut.out.value)}')
-    assert dut.out.value == dut.inp30.value, "Test Failed for input"
+    assert dut.out.value == dut.inp30.value, "Test Failed for input "
 
     cocotb.log.info('##### CTB: Develop your test here ########')
 
