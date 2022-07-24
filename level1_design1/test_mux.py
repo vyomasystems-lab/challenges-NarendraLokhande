@@ -316,7 +316,7 @@ async def test_mux_randomised(dut):
        await Timer(2, units='ns')
        out = dut.out.value
        #dut._log.info(f'Select = {sel:02}, inputs = {"inp%s" %i=:2}')
-       dut._log.info(f'Select = {sel:02}, inputs = {"inp%s"%i:2}, output = {int(out)}')
+       dut._log.info(f'Select = {sel:02}, inputs = {"inp%d"%i:2}, output = {int(out)}')
         #dut._log.info(f'Select = {sel:02}, inputs = {inp0}, output = {int(out)}')
        assert dut.out.value == dut.inp0.value,  "output was incorrect" 
         
