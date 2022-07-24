@@ -306,19 +306,19 @@ async def test_mux_randomised(dut):
     dut.sel.value = sel
     #select lines
     await Timer(2,units='ns')
-    out = dut.out.value
+    #out = dut.out.value
     #dut._log.info(f'Select = {sel:02}, output = {int(out)}')
-    dut._log.info(f'Input = {dut.inp13.value} Select={dut.sel.value}  model = {dut.inp13.value}, DUT={int(dut.out.value)}')
-    assert dut.out.value == dut.inp13.value, "Randomised Test Failed"
-    #for i in range(0,31,1):
-     #   sel1 = i
-      #  dut.sel.value = sel1
-       # await Timer(2, units='ns')
-        #out = dut.out.value
-        #dut._log.info(f'Select = {sel:02}, inputs = {"inp%s" %i=:2}')
-        #dut._log.info(f'Select = {sel:02}, inputs = {"inp%s"%i:2}, output = {int(out)}')
-        #dut._log.info(f'Select = {sel:02}, inputs = {inp10}, output = {int(out)}')
-        #assert dut.sel.value == sel,  "output was incorrect" 
+    #dut._log.info(f'Input = {dut.inp13.value} Select={dut.sel.value}  model = {dut.inp13.value}, DUT={int(dut.out.value)}')
+    #assert dut.out.value == dut.inp13.value, "Randomised Test Failed"
+    for i in range(0,31,1):
+       sel1 = i
+       dut.sel.value = sel1
+       await Timer(2, units='ns')
+       out = dut.out.value
+       #dut._log.info(f'Select = {sel:02}, inputs = {"inp%s" %i=:2}')
+       dut._log.info(f'Select = {sel:02}, inputs = {"inp%s"%i:2}, output = {int(out)}')
+        #dut._log.info(f'Select = {sel:02}, inputs = {inp0}, output = {int(out)}')
+       assert dut.out.value == dut.inp0.value,  "output was incorrect" 
         
 
 
