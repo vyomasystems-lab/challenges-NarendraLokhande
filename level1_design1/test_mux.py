@@ -295,31 +295,31 @@ async def test_mux(dut):
 
     cocotb.log.info('##### CTB: Develop your test here ########')
 
-@cocotb.test()
-async def test_mux_randomised(dut):
-    """Test for mux2"""
-    #inputs initial value
-    inp0 = random.randint(0, 3)
-    sel = random.randint(0, 30)
-    #input driving
-    dut.inp0.value = inp0
-    dut.sel.value = sel
-    #select lines
-    await Timer(2,units='ns')
-    #out = dut.out.value
-    #dut._log.info(f'Select = {sel:02}, output = {int(out)}')
-    #dut._log.info(f'Input = {dut.inp13.value} Select={dut.sel.value}  model = {dut.inp13.value}, DUT={int(dut.out.value)}')
-    #assert dut.out.value == dut.inp13.value, "Randomised Test Failed"
-    for i in range(0,31,1):
-       sel1 = i
-       dut.sel.value = sel1
-       await Timer(2, units='ns')
-       out = dut.out.value
-       #dut._log.info(f'Select = {sel:02}, inputs = {"inp%s" %i=:2}')
-       dut._log.info(f'Select = {sel:02}, inputs = {"inp%d"%i:2}, output = {int(out)}')
-        #dut._log.info(f'Select = {sel:02}, inputs = {inp0}, output = {int(out)}')
-       assert dut.out.value == dut.inp0.value,  "output was incorrect" 
+# @cocotb.test()
+# async def test_mux_randomised(dut):
+#     """Test for mux2"""
+#     #inputs initial value
+#     inp0 = random.randint(0, 3)
+#     sel = random.randint(0, 30)
+#     #input driving
+#     dut.inp0.value = inp0
+#     dut.sel.value = sel
+#     #select lines
+#     await Timer(2,units='ns')
+#     #out = dut.out.value
+#     #dut._log.info(f'Select = {sel:02}, output = {int(out)}')
+#     #dut._log.info(f'Input = {dut.inp13.value} Select={dut.sel.value}  model = {dut.inp13.value}, DUT={int(dut.out.value)}')
+#     #assert dut.out.value == dut.inp13.value, "Randomised Test Failed"
+#     for i in range(0,31,1):
+#        sel1 = i
+#        dut.sel.value = sel1
+#        await Timer(2, units='ns')
+#        out = dut.out.value
+#        #dut._log.info(f'Select = {sel:02}, inputs = {"inp%s" %i=:2}')
+#        dut._log.info(f'Select = {sel:02}, inputs = {"inp%d"%i:2}, output = {int(out)}')
+#         #dut._log.info(f'Select = {sel:02}, inputs = {inp0}, output = {int(out)}')
+#        assert dut.out.value == dut.inp0.value,  "output was incorrect" 
         
 
 
-    cocotb.log.info('##### CTB: Develop your test here ########')
+#     cocotb.log.info('##### CTB: Develop your test here ########')
