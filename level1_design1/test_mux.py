@@ -293,7 +293,7 @@ async def test_mux(dut):
     dut._log.info(f'Input = {dut.inp30.value} Select={dut.sel.value}  model = {dut.inp30.value}, DUT={int(dut.out.value)}')
     assert dut.out.value == dut.inp30.value, "Test Failed for input "
 
-    cocotb.log.info('##### CTB: Develop your test here ########')
+    
 
 # @cocotb.test()
 # async def test_mux_randomised(dut):
